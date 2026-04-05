@@ -111,3 +111,10 @@ span{
     right: 0;
     top: 5px;
 }
+
+#toggle{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 50px;
+}

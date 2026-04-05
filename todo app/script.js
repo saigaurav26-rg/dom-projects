@@ -1,7 +1,8 @@
 let btn = document.querySelector("button")
 let input = document.querySelector("#input")
 let listContainer = document.querySelector("#listContainer")
-let body = document.querySelector("body");
+let main = document.querySelector("main");
+let toggle = document.querySelector("#toggle")
 
 btn.addEventListener("click",function(){
     if(input.value === ""){
@@ -32,6 +33,20 @@ listContainer.addEventListener("click",function(dets){
      savedata();
   }
 });
+
+toggle.addEventListener("click",function(){
+    this.classList.toggle("ri-moon-fill");
+    if( this.classList.toggle("ri-sun-fill")){
+        main.style.background="cyan";
+        toggle.style.color="black";
+        main.style.transition="3s";
+    }else{
+        main.style.background="black";
+        toggle.style.color="white";
+        main.style.transition="2s";   
+    }
+})
+
 
 
 
