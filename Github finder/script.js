@@ -67,7 +67,7 @@ search.addEventListener("click",function(){
 toggle.addEventListener("click",function(){
     this.classList.toggle("ri-moon-fill");
     if( this.classList.toggle("ri-sun-fill")){
-        body.style.background="#243b55";
+        body.style.background="#07264a";
         toggle.style.color="white";
         body.style.transition="3s";
     }else{
