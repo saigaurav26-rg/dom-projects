@@ -18,17 +18,18 @@ body {
   width: 100%;
   max-width: 600px;
   padding: 20px;
-   animation: movecard 1.5s ease-in forwards;
+   /*animation: movecard 1.5s ease-in forwards;*/
 }
 
 .card {
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   
 }
+
 
 @keyframes movecard{
   0% {
@@ -76,9 +77,9 @@ body {
 
 .profile {
   display: flex;
-  gap: 20px;
- /* align-items: center;
-  flex-direction: column;*/
+  gap: 50px;
+  align-items: center;
+  /*flex-direction: column;*/
   justify-content: center;
 }
 
@@ -147,6 +148,16 @@ body {
     scale: 0.95;
 }
 
+
+.error {
+  margin-top: 15px;
+  padding: 10px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+}
 /* Responsive */
 @media (max-width: 1000px) {
   .profile {

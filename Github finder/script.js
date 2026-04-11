@@ -3,8 +3,11 @@ let usernameinp = document.querySelector(".usernameinp");
 let profile = document.querySelector(".profile");
 let toggle = document.querySelector("#toggle")
 let body = document.querySelector("body")
+ const errorDiv = document.querySelector(".error");
 
 function getuser(username){
+    clearError();
+    clearprofiledata()
     return fetch(`https://api.github.com/users/${username}`).then(raw=>{
         if(!raw.ok) throw new Error("user not found");
         return raw.json();
@@ -51,6 +54,19 @@ function profiledata(details){
     
 }
 
+function showError(message){
+    errorDiv.innerHTML=message;
+    errorDiv.style.opacity = "1"
+}
+
+function clearError(){
+  errorDiv.innerHTML = "";
+  errorDiv.style.opacity ="0" ;
+}
+
+function clearprofiledata(){
+    profile.innerHTML=""
+}
 
 search.addEventListener("click",function(){
    let username =  usernameinp.value.trim();
@@ -58,11 +74,19 @@ search.addEventListener("click",function(){
         getuser(username).then(function(data){
             profiledata(data);
         })
+
+         .catch(function(err) {
+         showError(err.message)});
    }
    else{
     alert("input section is empty...!!");
    }
+
 });
+
+
+
+
 
 toggle.addEventListener("click",function(){
     this.classList.toggle("ri-moon-fill");
